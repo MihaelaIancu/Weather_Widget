@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Time</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Roboto:wght@300&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="preload" href="https://unsplash.com/photos/hhZDn50B17c/download?force=true&w=2400" as="image">
+    <style>
+        body {
+            background-image: url("https://unsplash.com/photos/hhZDn50B17c/download?force=true&w=2400");
+            background-repeat: no-repeat;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="mainContainer">
+        <div class="A">
+            <h1 class="heading">Weather Boom</h1>
+            <form style="margin: 5% 0">
+                <input id="inputText" type="search" placeholder="Search for a city..." autofocus autocomplete="off">
+                <!-- <button class="btn-2" id="submitBtn" type="submit"><span>Submit</span><i class="fa fa-check"
+                        aria-hidden="true"></i></button> -->
+                <input class="headerBtn" id="submitBtn" value="Show me" type="submit" />
+                <input class="headerBtn" id="refreshBtn" value="Refresh me" type="button" />
+            </form>
+            <div class="display"></div>
+        </div>
+        <div class="B">
+            <div class="container" style="display: none;">
+                <div class="genericInfo">
+                    <i class="infoItem far fa-thumbtack fa-2x"><span id="city"></span><sup id="country"></sup></i>
+                    <!-- <span class="infoItem"></span> -->
+                    <span class="infoItem">
+                        <span></span>
+                        <span id="metric"></span>
+                    </span>
+                </div>
+                <!-- <hr> -->
+                <div class="clock">
+                    <div class="box">
+                        <div class="clockIcon"></div>
+                        <!-- <p>Clock</p> -->
+                    </div>
+                    <div class="clockTime" id="clock">
+                        <span id="hours">00
+                        </span>
+                        <span>:</span>
+                        <span id="minutes">00
+                        </span>
+                        <span>:</span>
+                        <span id="seconds">00
+                        </span>
+                    </div>
+                </div>
+                <!-- <hr> -->
+                <div class="weatherPanel">
+                    <span class="weatherDescription">
+                        <img class="weatherDescriptionItem" id="weatherIcon" src="" alt="weatherIcon">
+                        <span class="weatherDescriptionItem" id="weatherDescr"></span>
+                    </span>
+                    <span class="weatherDescription">
+                        <i class="weatherDescriptionItem fal fa-humidity fa-2x"></i>
+                        <span class="weatherDescriptionItem" id="humidity"></span>
+                    </span>
+                    <span class="weatherDescription">
+                        <i class="fal fa-tachometer-alt fa-2x"></i>
+                        <span class="weatherDescriptionItem" id="pressure"></span>
+                    </span>
+                    <span class="weatherDescription">
+                        <i class="fa fa-temperature-high fa-2x"></i>
+                        <span class="weatherDescriptionItem" id="max-temp"></span>
+                    </span>
+                    <span class="weatherDescription">
+                        <i class="fas fa-wind fa-2x"></i>
+                        <span class="weatherDescriptionItem" id="wind"></span>
+                    </span>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="disclaimer">
+        <div class="displayLocalTime">
+            <span id="localH">00</span>
+            <span>:</span>
+            <span id="localM">00</span>
+            <span>:</span>
+            <span id="localS">00</span>
+        </div>
+        <ul>
+            <li>the background image is displayed according the weather forecast - for rain/clear sky/clouds/snow, will be a different background image</li>
+            <li><strong>cities with different UTCs</strong>: before looking up for a city whith a different time zone than Romania, it is needed to reload the page,
+                otherwise the local time will be displayed with some bugs, try to use the <strong>refresh button</strong></li>
+            <li>the capitals have to be typed in english, rest of the towns are recognised successfully - ex:
+                <em>Bucharest</em>, instead of <em>Bucuresti</em></li>
+        </ul>
+    </div>
+
+
+    <script src="app.js"></script>
+</body>
+
+</html>
