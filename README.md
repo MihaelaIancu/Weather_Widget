@@ -1,6 +1,6 @@
 ## Weather-Widget
 
-Mini application which shows weather forecast and local time for any city the user wants to
+Mini project which shows weather forecast and local time for any city the user wants to
 
 ### Description
 
